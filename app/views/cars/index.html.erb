@@ -1,4 +1,27 @@
-<h1>MY CARS</h1>
+<div class="container">
+  <h1 class="text-center mt-5">This are your cars</h1>
+  <div class="row col-md-6">
+    <div class="mt-5 d-flex flex-column">
+      <ul>
+        <% @cars.each do |car| %>
+        <li>
+
+          <div class="card-product mt-5">
+            <img src="https://source.unsplash.com/500x600/?cars,<%= car.model %>"/>
+            <div class="card-product-infos">
+              <h2><%= car.model %></h2>
+              <p class="mt-5"><strong><%= car.brand %> </strong> <%= car.year %></p>
+              <p class="mt-5"><strong><%= car.category %> car </strong></p>
+            </div>
+          </div>
+        </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
 
 
 
