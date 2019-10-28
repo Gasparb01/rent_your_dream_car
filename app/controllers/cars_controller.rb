@@ -1,11 +1,10 @@
 class CarsController < ApplicationController
-
+  before_action :set_car, only: [:show, :edit, :update, :destroy]
   def index
     @cars = Car.all
   end
 
   def show
-    @car = Car.find(params[:id])
   end
 
   def new
@@ -21,20 +20,24 @@ class CarsController < ApplicationController
     end
   end
 
-  # def edit
-  # end
+  def edit
+  end
 
-  # def update
-  # end
+  def update
+  end
 
   def destroy
-    @car.delete
+    @car.destroy
     redirect_to cars_path
   end
 
   private
   def car_params
     params.require(:car).permit(:model, :year, :brand, :category)
+  end
+
+  def set_car
+    @car = Car.find(params[:id])
   end
 
 end
