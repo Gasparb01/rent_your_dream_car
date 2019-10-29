@@ -15,6 +15,10 @@ class CarPolicy < ApplicationPolicy
     # - user:   the `current_user` signed in with Devise.
   end
 
+  def show?
+    return true
+  end
+
   def destroy?
     record.owner == user
   end
