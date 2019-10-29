@@ -1,0 +1,21 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+
+      <h1>Add a car for rent</h1>
+
+      <%= simple_form_for @car do |f| %>
+      <%= f.input :model %>
+      <%= f.input :brand %>
+      <%= f.input :year %>
+      <%= f.input :category, collection: Car::CATEGORIES %>
+      <%= f.input :description %>
+      <%= f.input :photo %>
+      <%= f.input :photo_cache, as: :hidden %>
+
+      <%= f.submit "Edit car", class: "btn btn-primary" %>
+      <% end %>
+
+    </div>
+  </div>
+</div>
