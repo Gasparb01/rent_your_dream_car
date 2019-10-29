@@ -1,9 +1,29 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+require "faker"
+
+puts "Destroy all old seeds"
+
+User.destroy_all
+Car.destroy_all
+
+puts "Starting seeding process"
+
+5.times do
+  # TODO
+  # Add full name
+  user = User.create!(email: Faker::Internet.email, password: 123456)
+  puts "Created #{user.email}"
+  rand(3..10).times do
+    brand = Faker::Vehicle.make
+    model = Faker::Vehicle.model(make_of_model: brand)
+    image = Unsplash::Photo.search("cars,#{brand},#{model}").first
+    car = Car.new(brand: brand, model: model, year: Faker::Vehicle.year , description: "#{image.description.nil? ? "" : image.description}: The car license of is #{Faker::Vehicle.license_plate}. It is a #{Faker::Vehicle.fuel_type} car, with #{Faker::Vehicle.transmission} transmition. Its original color from factory is #{Faker::Vehicle.color}.")
+    car.owner = user
+    car.remote_photo_url = image.urls["regular"]
+    car.save!
+  end
+  puts "- Added #{user.cars.count} (#{user.cars.map { |car| car.brand }.join("-")}) to #{user.email}"
+  puts ""
+end
+
 
 
