@@ -15,6 +15,8 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 gem 'devise'
+gem 'unsplash'
+gem 'faker'
 
 
 group :development do

@@ -7,11 +7,12 @@
           <li>
 
             <div class="card-product mt-5">
-              <img src="https://source.unsplash.com/500x600/?cars,<%= car.model %>"/>
+              <%= cl_image_tag(car.photo, width: 500, height: 600, crop: :fill) %>
+
               <div class="card-product-infos">
                 <h2><%= car.model %></h2>
                 <p class="mt-5"><strong><%= car.brand %> </strong> <%= car.year %></p>
-                <p class="mt-5"><strong><%= car.category %> car </strong></p>
+                <p class="mt-5"><strong><%= car.description %></strong></p>
               </div>
             </div>
           </li>
