@@ -27,7 +27,7 @@ class CarsController < ApplicationController
 
   def update
     if @car.update(car_params)
-      redirect_to car_path(@car)
+      redirect_to cars_path
     else
       render :edit
     end
