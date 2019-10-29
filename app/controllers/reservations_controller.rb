@@ -22,6 +22,7 @@ class ReservationsController < ApplicationController
   end
 
   def show
+    authorize @reservation
   end
 
   def destroy
@@ -43,7 +44,7 @@ class ReservationsController < ApplicationController
   private
 
   def reservation_params
-    params.require(:reservation).permit(:date, :starting_date)
+    params.require(:reservation).permit(:date, :starting_date, :price)
   end
 
   def set_reservation
