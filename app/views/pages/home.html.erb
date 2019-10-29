@@ -1,42 +1,63 @@
-<div class="banner" id="inicio" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1544636331-e26879cd4d9b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=667&q=80);">
-  <div class="container banner text-white">
-    <h1><strong>Rent Car</strong>!</h1>
-    <p>Use our website RentCar to book a car rental for your holidays. Our car rentals come with many advantages such as free inclusions, free cancellations, etc. </p>
-    <a class= "btn btn-danger" background-image href="#libreria"><strong> GO!</strong></a>
+<header>
+  <div class="overlay"></div>
+  <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+    <source src="https://gcs-vimeo.akamaized.net/exp=1572397833~acl=%2A%2F473935316.mp4%2A~hmac=75c8bb3a3b7f3ad60c8e5b85e62c7c1db33dce926eb4d42797c3fd477631e0b7/vimeo-prod-skyfire-std-us/01/740/6/153703097/473935316.mp4" type="video/mp4">
+    </video>
+    <div class="container h-100">
+      <div class="d-flex h-100 text-center align-items-center">
+        <div class="w-100 text-white">
+          <h1 class="display-3 text-white">Your best option</h1>
+          <p class="lead mb-0 text-dark"></p>
+          <%= simple_form_for :search, url: root_path, method: :get do |f| %>
+            <div class="search-form-control form-group w-50 mx-auto">
+              <input class="form-control string required" type="text" name="search[query]" id="search_query" placeholder="Nissan" />
+              <button name="button" type="submit" class="btn btn-flat">
+                <i class="fas fa-search"></i> Search
+              </button>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+</header>
+
+<div class="container mt-5">
+  <div class="row">
+    <% @cars.first(6).each do |car| %>
+      <div class="col-sm-6 col-lg-4">
+        <div class="my-3">
+          <%= render "cars/car-card", car: car %>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>
 
-<div class="container justify-content-space-between" id="Nosotros">
-<h1 class="text-center"><strong>Nosotros</strong></h1>
+
+
+<div class="container justify-content-space-between py-5" id="Nosotros">
+<h1 class="text-center my-5"><strong>Our team</strong></h1>
   <div class="row">
-    <div class="col-sm-12 col-lg-3">
+    <div class="col-sm-12 col-lg-3 text-center">
       <img class="rounded-circle" src="https://avatars1.githubusercontent.com/u/54517348?s=460&v=4" alt="Generic placeholder image" width="140" height="140">
       <h3>Agustín Greissing</h3>
       <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
     </div>
-    <div class="col-sm-12 col-lg-3">
+    <div class="col-sm-12 col-lg-3 text-center">
       <img class="rounded-circle" src="https://avatars2.githubusercontent.com/u/54599926?s=460&v=4" alt="Generic placeholder image" width="140" height="140">
       <h3>Gaspar Baldunciel</h3>
       <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
     </div>
-    <div class="col-sm-12 col-lg-3  ">
+    <div class="col-sm-12 col-lg-3 text-center">
       <img class="rounded-circle" src="https://avatars0.githubusercontent.com/u/54510877?s=460&v=4" alt="Generic placeholder image" width="140" height="140">
       <h3>Gastón Lascano</h3>
       <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
     </div>
-    <div class="col-sm-12 col-lg-3  ">
+    <div class="col-sm-12 col-lg-3 text-center">
       <img class="rounded-circle" src="https://avatars1.githubusercontent.com/u/54502513?s=460&v=4" alt="Generic placeholder image" width="140" height="140">
       <h3>Enzo Crivelli</h3>
       <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
     </div>
   </div>
+  <button id="myBtn" class="btn btn-primary"><i class="fa fa-arrow-up"><i></button>
   </div>
-
-
-
-
-
-
-
-
-
