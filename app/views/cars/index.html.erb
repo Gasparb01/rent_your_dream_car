@@ -10,19 +10,18 @@
           <div class="card-product-infos">
             <h2><%= car.model %></h2>
             <p class="mt-5"><strong><%= car.brand %> </strong> <%= car.year %></p>
+            <p class="mt-5"><strong><%= car.category %></strong></p>
             <p class="mt-5"><strong><%= car.description %></strong></p>
-            <p class="mt-5"><strong><%= car.description %></strong>
 
-              <% if policy(car).edit? %>
-              <%= link_to "Update", edit_car_path(car) %>
-              <% end %>
-            </p>
-            <p class="mt-5"><strong><%= car.description %></strong>
+            <% if policy(car).edit? %>
+            <%= link_to "Update", edit_car_path(car) %>
+            <% end %>
 
             <% if policy(car).destroy? %>
-            <%= link_to "Delete", car_path(car), method: :delete, data: {confirm: 'Are you sure?'}  %>
+            <%= link_to car_path(car), method: :delete, data: {confirm: 'Are you sure?'} do %>
+              <i class="fas fa-trash"></i>
+            <% end %>
             <% end  %>
-            </p>
 
           </div>
         </div>
