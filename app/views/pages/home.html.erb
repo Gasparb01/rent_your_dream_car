@@ -10,22 +10,32 @@
 
 </div>
 
-<div class="mt-5 d-flex flex-column">
-  <ul>
+<div class="row">
+  <div class="container caja  col-12 col-md-6 col-lg-8" id="libreria" >
+    <ul mg-t=10px>
     <% @cars.each do |car| %>
-    <li>
-      <div class="card-product mt-5">
-        <%= cl_image_tag(car.photo, width: 400, height: 300, crop: :fill) %>
-        <div class="card-product-infos">
-          <h2><%= car.model %></h2>
-          <p class="mt-5"><strong><%= car.brand %> </strong> <%= car.year %></p>
-          <p class="mt-5"><strong><%= car.description %></strong></p>
+    <div>
+    <div class="card-trip">
+      <%= cl_image_tag car.photo, alt: "alttext", height: 200, width: 250, crop: :fill%>
+      <div class="card-trip-infos">
+        <div>
+          <h5><strong><%= link_to car.brand, car_path(car), class:"decoration" %></strong></h5>
+          <p> <%= link_to car.model %> </p>
+          <% end %>
         </div>
       </div>
-    </li>
-    <% end %>
-  </ul>
+    </div>
+    </div>
+  </div>
+</ul>
 </div>
+
+
+
+
+
+
+
 
 <div class="container justify-content-space-between" id="Nosotros">
 <h1 class="text-center"><strong>Nosotros</strong></h1>
