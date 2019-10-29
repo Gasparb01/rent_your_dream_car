@@ -6,6 +6,29 @@
   </div>
 </div>
 
+<div>
+
+</div>
+
+<div class="mt-5 d-flex flex-column">
+  <ul>
+    <% @cars.each do |car| %>
+    <li>
+
+      <div class="card-product mt-5">
+        <%= cl_image_tag(car.photo, width: 500, height: 600, crop: :fill) %>
+
+        <div class="card-product-infos">
+          <h2><%= car.model %></h2>
+          <p class="mt-5"><strong><%= car.brand %> </strong> <%= car.year %></p>
+          <p class="mt-5"><strong><%= car.description %></strong></p>
+        </div>
+      </div>
+    </li>
+    <% end %>
+  </ul>
+</div>
+
 <div class="container justify-content-space-between" id="Nosotros">
 <h1 class="text-center"><strong>Nosotros</strong></h1>
   <div class="row">
