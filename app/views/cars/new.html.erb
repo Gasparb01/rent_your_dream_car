@@ -10,13 +10,13 @@
       <%= f.input :year %>
       <%= f.input :category, collection: Car::CATEGORIES %>
       <%= f.input :description %>
+      <%= f.input :location %>
       <%= f.input :photo %>
       <%= f.input :photo_cache, as: :hidden %>
 
 
       <%= f.submit "Add a car", class: "btn btn-primary" %>
       <% end %>
-      <button id="myBtn" class="btn btn-primary"><i class="fa fa-arrow-up"><i></button>
     </div>
   </div>
 </div>
