@@ -1,8 +1,7 @@
 <div class="container d-flex justify-content-center">
   <div class="mt-5 d-flex flex-column">
-    <ul>
+
       <% @cars.each do |car| %>
-      <li>
 
         <div class="card-product mt-5">
           <%= cl_image_tag(car.photo, width: 500, height: 600, crop: :fill) %>
@@ -19,14 +18,22 @@
 
             <% if policy(car).destroy? %>
             <%= link_to car_path(car), method: :delete, data: {confirm: 'Are you sure?'} do %>
-              <i class="fas fa-trash"></i>
+            <i class="fas fa-trash"></i>
             <% end %>
             <% end  %>
 
           </div>
         </div>
-      </li>
+
       <% end %>
-    </ul>
+
+      <%= link_to new_car_path, class:"card-new-car-wrapper" do %>
+      <div class="card-product-new mt-5">
+
+          <i class="fas fa-plus"></i>
+
+      </div>
+      <% end %>
+
   </div>
 </div>
