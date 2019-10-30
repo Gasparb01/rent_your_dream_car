@@ -1,7 +1,7 @@
 class CarPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope.where(owner: user)
+        scope.all
     end
   end
 

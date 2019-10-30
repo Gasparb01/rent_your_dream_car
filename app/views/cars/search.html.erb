@@ -1,0 +1,19 @@
+<div class="main-container-search">
+  <div class="cards-search">
+
+    <% @cars.each do |car| %>
+    <div class="card-search my-3 mx-4">
+      <%= cl_image_tag(car.photo, width: 500, height: 600, crop: :fill) %>
+      <div class="card-search-infos">
+        <h2> <%= car.brand %> - <%= car.model %></h2>
+        <p><strong>Category: </strong><%= car.category %></p>
+        <p><strong>Description </strong><%= car.description %></p>
+      </div>
+    </div>
+    <% end %>
+
+  </div>
+  <!-- Change the token below (https://www.mapbox.com/account/access-tokens/) -->
+  <img id="map" src='https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/2.3381,48.8693,10.45,0,0/600x1000?access_token=pk.eyJ1IjoiZmRpcGVyc2lhIiwiYSI6ImNqcHdxanYxdTE1MDQ0MXBhNmJpenp0aTMifQ.J4Az8E09wvR_e7mhDop8yg
+  '>
+</div>

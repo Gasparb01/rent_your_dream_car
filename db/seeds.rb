@@ -7,7 +7,7 @@ Car.destroy_all
 
 puts "Starting seeding process"
 
-5.times do
+50.times do
   # TODO
   # Add full name
   user = User.create!(email: Faker::Internet.email, password: 123456)

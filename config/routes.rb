@@ -5,4 +5,6 @@ Rails.application.routes.draw do
 
   resources :cars
 
+  # VERB PATH, to: "CONTROLLER#ACTION", as: "PREFIX"
+  get "search", to: "cars#search", as: "search"
 end

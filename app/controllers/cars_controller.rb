@@ -1,7 +1,8 @@
 class CarsController < ApplicationController
+  skip_after_action :verify_authorized, only: :search
   before_action :set_car, only: [:show, :edit, :update, :destroy]
   def index
-    @cars = policy_scope(Car)
+    @cars = policy_scope(Car).where(owner: current_user)
   end
 
   def show
@@ -36,6 +37,10 @@ class CarsController < ApplicationController
   def destroy
     @car.destroy
     redirect_to cars_path
+  end
+
+  def search
+    @cars = policy_scope(Car).where(category: params["query"])
   end
 
   private
