@@ -1,0 +1,44 @@
+.car-reservation {
+  background-color: white;
+  padding: 40px 30px;
+  margin-top: -25vh;
+  margin-bottom: 40px;
+  border: 1px solid white;
+  border-radius: 10px;
+  box-shadow: 2px 2px 3px rgb(202, 202, 202);
+}
+
+.car-information {
+  flex: 2;
+  padding-right: 30px;
+  > div {
+    margin-bottom: 20px;
+    padding: 10px 0px;
+    border: 1px dashed rgba(0,0,0,0.4);
+    border-left: none;
+    border-right: none;
+    p {
+      margin: 0;
+      color: rgba(0,0,0,0.7);
+      i {
+        padding-right: 5px;
+      }
+    }
+  }
+}
+
+.car-booking {
+  flex: 1;
+}
+
+@media(max-width: 800px) {
+  .car-reservation {
+    flex-direction: column;
+  }
+  .car-booking {
+    margin-top: 20px;
+  }
+}
+
+
+

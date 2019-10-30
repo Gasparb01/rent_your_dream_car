@@ -1,0 +1,47 @@
+----user------
+* As a user i can edit my profile (full_name,  age, driver_licence)//agus
+* As a user i can (register and manage my session)//done
+* As a owner i can add a car (pictures, description, category, brand, year, opinion)
+----owner----- //TODO migration of cars. Gaspar
+* As a owner i can edit a car.// GASTON
+* As a owner i can delete a car.// GASTON
+* As a owner i can i can receive an email when someone books my car.
+----visitor----// components of home. ENZO
+* As a visitor i can navigate through the home page.
+* As a visitor i can see the list of cars.
+* As a visitor i can filter by (brand, category, prices range, location).
+* As a visitor i can filter by category (sportcars, luxury cars, 4x4 sports, super sports.)
+* As a visitor i can filter by a range of prices.
+* As a visitor i can make questions and receive answers of the car.
+* As a visitor i can see car details (including location and description).
+-----driver----
+* As a driver i can book for a car in an specific date.
+* As a driver i can receive an email with my reservation.
+* As a driver i can add reviews from a car i booked.
+* As a driver i can locate cars on a map.
+
+TODO:
+
+AGUS
+* As a user i can edit my profile (full_name,  age, driver_licence)//agus
+
+GASPAR
+X migration of cars DONE
+* cars index.
+
+GASTON
+* As a owner i can edit a car.
+* As a owner i can delete a car.
+
+ENZO
+* components of home.
+* migration of reservations
+
+
+---------------------------------------------------------------------------
+NICE TO HAVE
+* As a driver i can ask public questions to the owner.(nicer to have)
+* As a driver && owner i can contact with the owner and have a chat.(nice to have)
+* As a driver && owner i can join to the club and share things there.(nice to have)
+* As a driver && owner i can pay with my credit card.(nice to have)
+
