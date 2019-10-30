@@ -9,54 +9,66 @@
           <h1 class="display-3 text-white">Your best option</h1>
           <p class="lead mb-0 text-dark"></p>
           <%= simple_form_for :search, url: root_path, method: :get do |f| %>
-            <div class="search-form-control form-group w-50 mx-auto">
-              <input class="form-control string required" type="text" name="search[query]" id="search_query" placeholder="Nissan" />
-              <button name="button" type="submit" class="btn btn-flat">
-                <i class="fas fa-search"></i> Search
-              </button>
-            </div>
+          <div class="search-form-control form-group w-50 mx-auto">
+            <select class="form-control select required text-white" name="search[query]" id="search_query">
+              <% Car::CATEGORIES.each do |category| %>
+              <option value="<%= category %>"><%= category %></option>
+              <% end %>
+            </select>
+            <button name="button" type="submit" class="btn btn-flat text-white">
+              <i class="fas fa-search text-white"></i> Search
+            </button>
+          </div>
           <% end %>
         </div>
       </div>
     </div>
-</header>
+  </header>
 
-<div class="container mt-5">
-  <div class="row">
-    <% @cars.first(6).each do |car| %>
+  <div class="container mt-5">
+    <div class="row">
+      <% @cars.first(6).each do |car| %>
       <div class="col-sm-6 col-lg-4">
         <div class="my-3">
           <%= render "cars/car-card", car: car %>
         </div>
       </div>
-    <% end %>
-  </div>
-</div>
-
-
-
-<div class="container justify-content-space-between py-5" id="Nosotros">
-  <h1 class="text-center my-5"><strong>Our team</strong></h1>
-  <div class="row">
-    <div class="col-sm-12 col-lg-3 text-center">
-      <img class="rounded-circle" src="https://avatars1.githubusercontent.com/u/54517348?s=460&v=4" alt="Generic placeholder image" width="140" height="140">
-      <h3>Agustín Greissing</h3>
-      <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-    </div>
-    <div class="col-sm-12 col-lg-3 text-center">
-      <img class="rounded-circle" src="https://avatars2.githubusercontent.com/u/54599926?s=460&v=4" alt="Generic placeholder image" width="140" height="140">
-      <h3>Gaspar Baldunciel</h3>
-      <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-    </div>
-    <div class="col-sm-12 col-lg-3 text-center">
-      <img class="rounded-circle" src="https://avatars0.githubusercontent.com/u/54510877?s=460&v=4" alt="Generic placeholder image" width="140" height="140">
-      <h3>Gastón Lascano</h3>
-      <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-    </div>
-    <div class="col-sm-12 col-lg-3 text-center">
-      <img class="rounded-circle" src="https://avatars1.githubusercontent.com/u/54502513?s=460&v=4" alt="Generic placeholder image" width="140" height="140">
-      <h3>Enzo Crivelli</h3>
-      <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+      <% end %>
     </div>
   </div>
-</div>
+
+
+
+  <div class="container justify-content-space-between badge-light py-5" id="Nosotros">
+    <h1 class="text-center my-5"><strong>Our team</strong></h1>
+    <div class="row">
+      <div class="col-sm-12 col-lg-3 text-center">
+        <img class="rounded-circle" src="https://avatars2.githubusercontent.com/u/54599926?s=460&v=4" alt="Generic placeholder image" width="140" height="140">
+        <h3 class="my-2">Gaspar Baldunciel</h3>
+        <h3>CEO</h3>
+        <a href="https://www.linkedin.com/in/gaspar-baldunciel-30b60a119"><i class="fab fa-2x fa-linkedin"></i></a>
+        <p class="mb-5">Profesional Rugby Player and entrepeneur. Owner of Clifftone brand.He joint to Le Wagon on August 2019. Founder of Le Chauffeur.</p>
+      </div>
+      <div class="col-sm-12 col-lg-3 text-center">
+        <img class="rounded-circle" src="https://avatars0.githubusercontent.com/u/54510877?s=460&v=4" alt="Generic placeholder image" width="140" height="140">
+        <h3 class="my-2">Gastón Lascano</h3>
+        <h3>CFO</h3>
+        <a href="https://www.linkedin.com/in/gaston-lascano-77a932163"><i class="fab fa-2x fa-linkedin"></i></a>
+        <p class="mb-5">Management profesional and Wakeboard Rider. He joint to Le Wagon on August 2019. Co-founder of Le Chauffeur.</p>
+      </div>
+      <div class="col-sm-12 col-lg-3 text-center">
+        <img class="rounded-circle" src="https://avatars1.githubusercontent.com/u/54502513?s=460&v=4" alt="Generic placeholder image" width="140" height="140">
+        <h3 class="my-2">Enzo Crivelli</h3>
+        <h3>CMO</h3>
+        <a href="https://www.linkedin.com/in/enzo-crivelli-5b3b6012a"><i class="fab fa-2x fa-linkedin"></i></a>
+        <p class="mb-5">Marketing professional and Triathlete. He joint Le Wagon on August 2019. Co-founder of Le Chauffeur</p>
+      </div>
+      <div class="col-sm-12 col-lg-3 text-center">
+        <img class="rounded-circle" src="https://avatars1.githubusercontent.com/u/54517348?s=460&v=4" alt="Generic placeholder image" width="140" height="140">
+        <h3 class="my-2">Agustín Greissing </h3>
+        <h3>Street sweeper</h3>
+        <a href="https://www.linkedin.com/in/agustingreissing"><i class="fab fa-2x fa-linkedin"></i></a>
+        <p class="mb-5">Economist. Passionate about reading and cooking. He joint to Le Wagon on August 2019. Co-founder of Le Chauffeur.</p>
+      </div>
+    </div>
+  </div>
