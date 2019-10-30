@@ -1,0 +1,13 @@
+<%= link_to car_path(car), class:"car-card" do %>
+  <div class="card-trip">
+    <%= cl_image_tag car.photo, alt: "alttext", height: 200, width: 250, crop: :fill, class: "w-100"%>
+    <div class="card-trip-infos">
+      <div>
+        <h2><%= car.brand.upcase %></h2>
+        <p><%= car.model %></p>
+      </div>
+      <h2 class="card-trip-pricing">£99.99</h2>
+      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+    </div>
+  </div>
+<% end %>

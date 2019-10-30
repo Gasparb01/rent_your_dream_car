@@ -4,5 +4,5 @@ class Car < ApplicationRecord
   has_many :reservations, dependent: :destroy
   has_many :users, through: :reservations
   CATEGORIES = ["Classic", "Convertible", "Coupe", "Exotic", "Sedan", "SUV", "Sport"]
-  validates :model, :brand, :year, :category, :description, :photo, presence: true
+  validates :model, :brand, :year, :category, :description, :photo, :location, presence: true
 end
