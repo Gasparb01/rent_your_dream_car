@@ -1,8 +1,8 @@
 <div class="banner mb-5" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @car.photo %>);">
 </div>
-<div class="container d-flex justify-content-between">
-  <div>
-    <h1><%= @car.model %><strong><%= @car.brand %></strong></h1>
+<div class="container d-flex justify-content-between car-reservation">
+  <div class="car-information">
+    <h1 class="mb-3"><%= @car.model %><strong><%= @car.brand %></strong></h1>
     <div class="mb-5 d-flex justify-content-around">
       <div>
         <p><i class="fas fa-user"></i> 4 passengers</p>
@@ -15,29 +15,22 @@
       </div>
     </div>
     <p><%= @car.description %></p>
-    <div class="flash flash-success alert alert-dismissible fade show" role="alert">
-      <span class="mr-5"><strong>Yay!</strong> 🎉 Make your dream happen! Drive the <strong> <%= @car.brand %> <%= @car.model %> </strong></span>
-      <a data-dismiss="alert" aria-label="Close">
-        <i class="fas fa-times"></i>
-      </a>
-    </div>
   </div>
-  <div>
+  <div class="car-booking">
+    <h3 class="mb-3">Reservation</h3>
     <%= simple_form_for [@car, @reservation] do |f| %>
     <%= f.input :starting_date, as: :string, input_html: { class: "datepicker"} %>
+    <%= f.input :end_day, as: :string, input_html: { class: "datepicker"} %>
     <%= f.button :submit, class: "btn btn-primary" %>
     <% end %>
   </div>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
+</div>
+<div class="container">
+  <div class="flash flash-success alert alert-dismissible fade show" role="alert">
+    <span class="mr-5"><strong>Yay!</strong> 🎉 Make your dream happen! Drive the <strong> <%= @car.brand %> <%= @car.model %> </strong></span>
+    <a data-dismiss="alert" aria-label="Close">
+      <i class="fas fa-times"></i>
+    </a>
+  </div>
 </div>
 
