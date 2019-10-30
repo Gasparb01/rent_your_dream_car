@@ -19,8 +19,12 @@
   <div class="car-booking">
     <h3 class="mb-3">Reservation</h3>
     <%= simple_form_for [@car, @reservation] do |f| %>
-    <%= f.input :starting_date, as: :string, input_html: { class: "datepicker"} %>
-    <%= f.input :end_day, as: :string, input_html: { class: "datepicker"} %>
+    <%= f.input :starting_date, as: :string, input_html: { class: "datepicker", id: "start_date" } %>
+    <%= f.input :end_day, as: :string, input_html: { class: "datepicker", id: "end_date" } %>
+    <%= f.hidden_field :price, value:0 %>
+    <p>Price per day: $100</p>
+    <p>Days of renting: <span id="days">0</span></p>
+    <p>Total cost: <span id="total-price">0</span></p>
     <%= f.button :submit, class: "btn btn-primary" %>
     <% end %>
   </div>
