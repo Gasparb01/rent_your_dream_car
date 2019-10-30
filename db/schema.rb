@@ -33,10 +33,11 @@ ActiveRecord::Schema.define(version: 2019_10_30_145415) do
     t.bigint "user_id"
     t.bigint "car_id"
     t.integer "price"
-    t.date "starting_date"
+    t.string "starting_date"
     t.integer "days"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "end_day"
     t.index ["car_id"], name: "index_reservations_on_car_id"
     t.index ["user_id"], name: "index_reservations_on_user_id"
   end
