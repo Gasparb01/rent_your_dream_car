@@ -1,2 +1,22 @@
-<h1>Reservations#index</h1>
-<p>Find me in app/views/reservations/index.html.erb</p>
+<h1 class="text-center mt-5">Reservations</h1>
+<div class="container">
+  <ul>
+    <li>
+       <% @reservations.each do |reservation| %>
+        <div class="card-product mt-5">
+          <%= cl_image_tag(reservation.car.photo, width: 500, height: 600, crop: :fill) %>
+          <div class="card-product-infos">
+            <h2><%= reservation.car.model %><%= reservation.car.brand %></h2>
+            <h3 class="mt-5">Days:</h3>
+            <p class="mt-5"><strong> <%= reservation.days %> </strong></p>
+            <h3>Price:</h3>
+           <button class="mt-5 btn btn-sucess"><strong>$<%= reservation.price %></strong></button>
+          </div>
+        </div>
+      <% end %>
+    </li>
+  </ul>
+</div>
+
+
+

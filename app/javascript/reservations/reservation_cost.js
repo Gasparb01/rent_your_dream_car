@@ -1,6 +1,8 @@
 const updatePrice = () => {
   const days = document.getElementById("days")
+  const daysSetter = document.getElementById("days-setter")
   const totalPrice = document.getElementById("total-price")
+  const totalPriceSetter = document.getElementById("price-setter")
 
   const startDate = document.getElementById("start_date");
   const endDate = document.getElementById("end_date");
@@ -18,7 +20,9 @@ const updatePrice = () => {
 
     if (numberOfDays > 0) {
       days.innerText = numberOfDays
+      daysSetter.value = numberOfDays
       totalPrice.innerText = calculateDays() * 100
+      totalPriceSetter.value = calculateDays() * 100
     } else {
       console.log("Negative")
     }
