@@ -46,6 +46,15 @@
   padding: 16px;
 }
 
+.card-search-wrapper {
+  text-decoration: none;
+  color: black;
+  &:hover {
+    text-decoration: none;
+    color: black;
+  }
+}
+
 #map {
   /*width: 100%;*/
   height: 100vh;

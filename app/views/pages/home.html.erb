@@ -8,7 +8,7 @@
         <div class="w-100 text-white">
           <h1 class="display-3 text-white">Your best option</h1>
           <p class="lead mb-0 text-dark"></p>
-          <%= simple_form_for :search, url: root_path, method: :get do |f| %>
+          <%= simple_form_for :search, url: search_path, method: :get do |f| %>
           <div class="search-form-control form-group w-50 mx-auto">
             <select class="form-control select required text-white" name="search[query]" id="search_query">
               <% Car::CATEGORIES.each do |category| %>
@@ -72,3 +72,23 @@
       </div>
     </div>
   </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

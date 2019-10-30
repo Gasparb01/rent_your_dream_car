@@ -41,7 +41,7 @@ class CarsController < ApplicationController
   end
 
   def search
-    @cars = policy_scope(Car).where(category: params["query"])
+    @cars = policy_scope(Car).where(category: params["search"]["query"])
   end
 
   private
