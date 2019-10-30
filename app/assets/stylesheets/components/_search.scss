@@ -7,15 +7,19 @@
   grid-template-columns: 1fr ;
   grid-gap: 5px;
   flex-grow: 1;
+  align-content: flex-start;
 }
 
 .card-search {
   overflow: hidden;
   height: 120px;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 3px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
+  &:hover {
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  }
 }
 
 .card-search img {
@@ -55,7 +59,7 @@
 
   }
   #map {
-  display: none;
+    display: none;
   }
 }
 

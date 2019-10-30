@@ -1,8 +1,8 @@
 <div class="main-container-search">
-  <div class="cards-search">
+  <div class="cards-search mt-2">
 
     <% @cars.each do |car| %>
-    <div class="card-search my-3 mx-4">
+    <div class="card-search my-2 mx-3">
       <%= cl_image_tag(car.photo, width: 500, height: 600, crop: :fill) %>
       <div class="card-search-infos">
         <h2> <%= car.brand %> - <%= car.model %></h2>
