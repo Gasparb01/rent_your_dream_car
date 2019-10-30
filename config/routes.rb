@@ -9,4 +9,6 @@ Rails.application.routes.draw do
 
   resources :reservations, only:[:index, :show, :edit, :update, :destroy]
 
+  # VERB PATH, to: "CONTROLLER#ACTION", as: "PREFIX"
+  get "search", to: "cars#search", as: "search"
 end
