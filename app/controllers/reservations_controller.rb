@@ -12,13 +12,14 @@ class ReservationsController < ApplicationController
     authorize @reservation
 
     if @reservation.save
-      redirect_to reservations_index_path
+      redirect_to reservations_path
     else
       render :new
     end
   end
 
   def index
+    @reservations = policy_scope(Reservation)
   end
 
   def show
