@@ -19,6 +19,7 @@ gem 'unsplash'
 gem 'faker'
 
 gem 'pundit'
+gem 'geocoder'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

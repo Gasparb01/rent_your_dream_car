@@ -6,4 +6,6 @@ class Car < ApplicationRecord
   has_many :reviews, dependent: :destroy
   CATEGORIES = ["Classic", "Convertible", "Coupe", "Exotic", "Sedan", "SUV", "Sport"]
   validates :model, :brand, :year, :category, :description, :photo, :location, presence: true
+  geocoded_by :location
+  after_validation :geocode, if: :will_save_change_to_location?
 end
