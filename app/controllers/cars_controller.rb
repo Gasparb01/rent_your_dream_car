@@ -42,6 +42,16 @@ class CarsController < ApplicationController
 
   def search
     @cars = policy_scope(Car).where(category: params["search"]["query"])
+
+    @cars = Car.geocoded
+
+    @markers = @cars.map do |car|
+      {
+        lat: car.latitude,
+        lng: car.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { car: car }),
+      }
+    end
   end
 
   private
@@ -55,3 +65,4 @@ class CarsController < ApplicationController
     authorize @car
   end
 end
+
