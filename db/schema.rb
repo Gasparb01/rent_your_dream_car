@@ -27,7 +27,10 @@ ActiveRecord::Schema.define(version: 2019_10_31_164056) do
     t.text "description"
     t.string "photo"
     t.string "location"
+    t.float "latitude"
+    t.float "longitude"
     t.integer "price"
+
     t.index ["user_id"], name: "index_cars_on_user_id"
   end
 
