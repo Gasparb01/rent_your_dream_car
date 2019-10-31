@@ -3,6 +3,7 @@ class Car < ApplicationRecord
   belongs_to :owner, class_name: 'User', foreign_key: 'user_id'
   has_many :reservations, dependent: :destroy
   has_many :users, through: :reservations
+  has_many :reviews, dependent: :destroy
   CATEGORIES = ["Classic", "Convertible", "Coupe", "Exotic", "Sedan", "SUV", "Sport"]
   validates :model, :brand, :year, :category, :description, :photo, :location, presence: true
 end
