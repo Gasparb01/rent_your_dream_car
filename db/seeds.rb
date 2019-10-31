@@ -24,6 +24,14 @@ puts "Starting seeding process"
     car.remote_photo_url = image.urls["regular"]
     car.save!
   end
+
+    rand(1..4).times do
+      review = Review.new
+      review.user = user
+      review.car = car
+      review.content = Faker::Lorem.paragraph(sentence_count: rand(1..3))
+    end
+
   puts "- Added #{user.cars.count} (#{user.cars.map { |car| car.brand }.join("-")}) to #{user.email}"
   puts ""
 end
