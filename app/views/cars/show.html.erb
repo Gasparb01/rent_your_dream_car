@@ -17,6 +17,26 @@
         </div>
       </div>
       <p><%= @car.description %></p>
+
+      <div class="reviews">
+        <% @car.reviews.each do |review| %>
+        <div class="card my-3">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-sm-12 col-lg-3">
+                <img src="https://www.classifapp.com/wp-content/uploads/2017/09/avatar-placeholder.png" class="img-rounded">
+                <span class="review-block-name"><a><strong><%= review.user.email %></strong></a></span>
+                <span class="review-block-date"><%= review.created_at.strftime("%B %Y") %></span>
+              </div>
+              <div class="col-sm-12">
+                <div class="review-block-title"></div>
+                <div class="review-block-description"><%= review.content %></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </div>
     </div>
     <div class="col-md-4">
       <div class="car-booking">
@@ -53,25 +73,7 @@
       </div>
     </div>
   </div>
-
-  <div class="reviews">
-    <% @car.reviews.each do |review| %>
-      <div class="row">
-        <div class="col-sm-3">
-          <img src="http://dummyimage.com/60x60/666/ffffff&text=No+Image" class="img-rounded">
-          <div class="review-block-name"><a href="#">nktailor</a></div>
-          <div class="review-block-date">January 29, 2016<br/>1 day ago</div>
-        </div>
-        <div class="col-sm-9">
-          <div class="review-block-title"></div>
-          <div class="review-block-description"><%= review.content %></div>
-        </div>
-      </div>
-    <% end %>
-  </div>
-
 </div>
-
 
 <div class="container">
   <div class="flash flash-success alert alert-dismissible fade show" role="alert">
