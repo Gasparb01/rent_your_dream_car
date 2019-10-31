@@ -6,14 +6,14 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    @car = Car.find(params[:car_id])
+    @reservation = Reservation.find(params[:reservation_id])
     @review = current_user.reviews.build(review_params)
-    @review.car = @car
-    if @review.save
+    @review.car = @reservation.car
+    if @review.save!
       flash[:success] = "Thanks for your review!"
-      redirect_to car_reservations_path
+      redirect_to car_path(@reservation.car)
     else
-      render :new
+      render 'reservations/show'
     end
     authorize @review
   end
