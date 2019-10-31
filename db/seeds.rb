@@ -7,10 +7,11 @@ Car.destroy_all
 
 puts "Starting seeding process"
 
-5.times do
+5.times do |num|
   # TODO
   # Add full name
-  user = User.create!(email: Faker::Internet.email, password: 123456)
+  email = num == 1 ? "user@mail.com" : Faker::Internet.email
+  user = User.create!(email: email, password: 123456)
   puts "Created #{user.email}"
   rand(3..10).times do
     category = Faker::Vehicle.car_type
