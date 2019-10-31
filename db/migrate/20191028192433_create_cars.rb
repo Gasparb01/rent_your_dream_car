@@ -5,6 +5,7 @@ class CreateCars < ActiveRecord::Migration[5.2]
       t.string :year
       t.string :brand
       t.string :category
+      t.integer :price
       t.references :user, foreign_key: true
 
       t.timestamps
