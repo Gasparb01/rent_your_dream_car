@@ -1,8 +1,11 @@
+import { CountUp } from "countup.js";
+
 const updatePrice = () => {
   const days = document.getElementById("days")
   const daysSetter = document.getElementById("days-setter")
   const totalPrice = document.getElementById("total-price")
   const totalPriceSetter = document.getElementById("price-setter")
+  const thatPriceCar = document.getElementById("that-car-price").innerText
 
   const startDate = document.getElementById("start_date");
   const endDate = document.getElementById("end_date");
@@ -19,10 +22,37 @@ const updatePrice = () => {
     const numberOfDays = calculateDays()
 
     if (numberOfDays > 0) {
+
+
       days.innerText = numberOfDays
       daysSetter.value = numberOfDays
-      totalPrice.innerText = calculateDays() * 100
-      totalPriceSetter.value = calculateDays() * 100
+
+      // old value
+      const startPrice = parseInt(totalPriceSetter.value);
+
+      // set the price of the booking to the input
+      totalPriceSetter.value = numberOfDays * thatPriceCar
+
+      const endPrice = parseInt(totalPriceSetter.value);
+
+      // TODO: counter fron old price to new price
+      //totalPrice.innerText = numberOfDays * thatPriceCar;
+
+      const options = {
+        duration: 1,
+        startVal: startPrice,
+      };
+      let demo = new CountUp('total-price', endPrice, options);
+      if (!demo.error) {
+        demo.start();
+      } else {
+        console.error(demo.error);
+      }
+
+
+      // new value
+
+
     } else {
       console.log("Negative")
     }
