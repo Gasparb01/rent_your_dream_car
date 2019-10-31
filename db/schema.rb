@@ -10,7 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2019_10_31_143217) do
+=======
+
+ActiveRecord::Schema.define(version: 2019_10_31_164056) do
+>>>>>>> master
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,8 +31,12 @@ ActiveRecord::Schema.define(version: 2019_10_31_143217) do
     t.text "description"
     t.string "photo"
     t.string "location"
+<<<<<<< HEAD
     t.float "latitude"
     t.float "longitude"
+=======
+    t.integer "price"
+>>>>>>> master
     t.index ["user_id"], name: "index_cars_on_user_id"
   end
 
@@ -42,6 +51,16 @@ ActiveRecord::Schema.define(version: 2019_10_31_143217) do
     t.string "end_day"
     t.index ["car_id"], name: "index_reservations_on_car_id"
     t.index ["user_id"], name: "index_reservations_on_user_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.text "content"
+    t.bigint "car_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["car_id"], name: "index_reviews_on_car_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -62,4 +81,6 @@ ActiveRecord::Schema.define(version: 2019_10_31_143217) do
   add_foreign_key "cars", "users"
   add_foreign_key "reservations", "cars"
   add_foreign_key "reservations", "users"
+  add_foreign_key "reviews", "cars"
+  add_foreign_key "reviews", "users"
 end
