@@ -9,9 +9,9 @@
       <h4><strong><%= car.brand %></strong> - <%= car.model %></h4>
       <p class="mt-4"><strong>Model year: </strong><%= car.year %></p>
       <p class="mt-2"><strong>Category: </strong><%= car.category %></p>
-      <p class="mt-2"><strong>Description: </strong><%= car.description %></p>
+      <p class="mt-2"><strong>Description: </strong><%= truncate(car.description, length: 20,separator: ' ') %></p>
       <p class="mt-2"><strong>Location: </strong><%= car.location %></p>
-      <p class="my-2"><strong>Price: </strong><%= car.price %></p>
+      <p class="my-2"><strong>Price: </strong> $<%= car.price %></p>
 
       <div class="d-flex justify-content-around">
 
