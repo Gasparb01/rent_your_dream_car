@@ -1,11 +1,11 @@
 <div class="container-fluid">
   <div class="row">
-    <div id="reservation-card" class="col-md-5 bg-white mt-2 p-4">
-      <div class="">
-        <h4 class="text-center m-2">Your reservation</h4>
+    <div id="reservation-card" class="bg-white mt-2 p-4">
+      <div class="mb-2">
+        <h4 class="text-center mt-2">Your reservation</h4>
       </div>
       <div class="card w-100">
-        <%= cl_image_tag(@reservation.car.photo, :width => 550, :crop => "pad") %>
+        <%= cl_image_tag(@reservation.car.photo, height:300, crop: "fill") %>
         <div class="card-body">
           <h5 class="card-title"><%= @reservation.car.model %><%= @reservation.car.brand %></h5>
           <p class="card-text">You are about to make your dream true. Reservation is done! <strong>Thanks for trusting us!</strong> </p>
@@ -50,7 +50,7 @@
      <div
      id="map"
      style="width: 100%;
-     height: 1000px;"
+     height: 800px;"
      data-markers="<%= @markers.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
 

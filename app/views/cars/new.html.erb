@@ -1,14 +1,4 @@
-<<<<<<< HEAD
-<div class=" add-car">
-  <div class="container my-8 mx-auto">
-    <div class="row justify-space-between">
-      <h1 class="mx-auto my-5"><strong>Rent your car and start to earn money</strong></h1>
-      <div class="card-card-new my-5">
-        <%= simple_form_for @car do |f| %>
-        <div class="justify-content-felx">
-          <%= f.input :model, label: false, placeholder:"BMW" %>
-        </div>
-=======
+
 <div class="banner-2" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1434187008486-2768576189ee?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80)">
   <div class="container">
     <h1>Add your car</h1>
@@ -20,7 +10,6 @@
     <div class="col-md-6 offset-md-3">
       <%= simple_form_for @car do |f| %>
         <%= f.input :model, label: false, placeholder:"BMW" %>
->>>>>>> e5f16e5e14a316ced8d6a060dc1af5bf1b621bd9
         <%= f.input :brand, label: false, placeholder:"X3" %>
         <%= f.input :year,label: false, placeholder:"2016" %>
         <%= f.input :category, collection: Car::CATEGORIES,label: false, placeholder:"Category" %>
@@ -29,16 +18,9 @@
         <%= f.input :price, label: false, placeholder:"$250" %>
         <%= f.input :photo, label: false  %>
         <%= f.input :photo_cache, as: :hidden %>
-<<<<<<< HEAD
-        <div class="container mx-auto my-5">
-          <%= f.submit  "Add a car", class: "btn btn-danger" %>
-        </div>
-      </div>
-=======
         <div class="container mx-auto my-3">
           <%= f.submit  "Add a car", class: "btn btn-danger" %>
         </div>
->>>>>>> e5f16e5e14a316ced8d6a060dc1af5bf1b621bd9
       <% end %>
     </div>
   </div>
