@@ -1,24 +1,24 @@
 <div class=" add-car">
-<div class="container my-8 mx-auto">
-  <div class="row justify-space-between">
+  <div class="container my-8 mx-auto">
+    <div class="row justify-space-between">
       <h1 class="mx-auto my-5"><strong>Rent your car and start to earn money</strong></h1>
-    <div class="card-card-new my-5">
-      <%= simple_form_for @car do |f| %>
-      <div class="justify-content-felx">
-      <%= f.input :model, label: false, placeholder:"BMW" %>
+      <div class="card-card-new my-5">
+        <%= simple_form_for @car do |f| %>
+        <div class="justify-content-felx">
+          <%= f.input :model, label: false, placeholder:"BMW" %>
+        </div>
+        <%= f.input :brand, label: false, placeholder:"X3" %>
+        <%= f.input :year,label: false, placeholder:"2016" %>
+        <%= f.input :category, collection: Car::CATEGORIES,label: false, placeholder:"Category" %>
+        <%= f.input :description, label: false, placeholder:"The BMW X3 is a compact luxury crossover SUV manufactured by German automaker BMW since 2003."  %>
+        <%= f.input :location, label: false, placeholder:"Madrid" %>
+        <%= f.input :price, label: false, placeholder:"$250" %>
+        <%= f.input :photo, label: false  %>
+        <%= f.input :photo_cache, as: :hidden %>
+        <div class="container mx-auto my-5">
+          <%= f.submit  "Add a car", class: "btn btn-danger" %>
+        </div>
       </div>
-      <%= f.input :brand, label: false, placeholder:"X3" %>
-      <%= f.input :year,label: false, placeholder:"2016" %>
-      <%= f.input :category, collection: Car::CATEGORIES,label: false, placeholder:"Category" %>
-      <%= f.input :description, label: false, placeholder:"The BMW X3 is a compact luxury crossover SUV manufactured by German automaker BMW since 2003."  %>
-      <%= f.input :location, label: false, placeholder:"Madrid" %>
-      <%= f.input :price, label: false, placeholder:"$250" %>
-      <%= f.input :photo, label: false  %>
-      <%= f.input :photo_cache, as: :hidden %>
-  <div class="container mx-auto my-5">
-      <%= f.submit  "Add a car", class: "btn btn-danger" %>
-  </div>
-</div>
       <% end %>
     </div>
   </div>
