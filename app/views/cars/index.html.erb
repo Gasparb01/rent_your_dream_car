@@ -2,7 +2,7 @@
   <div class="row">
     <% @cars.each do |car| %>
     <div class="col-12 col-lg-6">
-      <div class="card-product mt-3 ">
+      <div class="card-product mt-3 mb-3">
         <%= cl_image_tag(car.photo, crop: :fill) %>
         <div class="card-product-infos m-1">
           <h4><strong><%= car.brand %></strong> - <%= car.model %></h4>
