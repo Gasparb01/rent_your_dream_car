@@ -25,9 +25,27 @@ puts "Starting seeding process"
     car.remote_photo_url = image.urls["regular"]
     car.save!
   end
+
+
   puts "- Added #{user.cars.count} (#{user.cars.map { |car| car.brand }.join("-")}) to #{user.email}"
   puts ""
 end
 
-
+Car.all.each do |car|
+  rand(1..4).times do
+    reservation = Reservation.new
+    reservation.car = car
+    client = User.where.not(id: car.owner.id).sample
+    reservation.user = client
+    reservation.starting_date = "24.09.2019"
+    reservation.end_day = "26.09.2019"
+    reservation.price = car.price * 2
+    reservation.save!
+    review = Review.new
+    review.user = client
+    review.car = car
+    review.content = Faker::Lorem.paragraph(sentence_count: rand(1..3))
+    review.save!
+  end
+end
 

@@ -7,11 +7,12 @@ Rails.application.routes.draw do
 
   resources :cars do
     resources :reservations, only:[:create]
-      resources :reviews, only:[:new, :create]
   end
 
-  resources :reservations, only:[:index, :show, :edit, :update, :destroy]
 
+  resources :reservations, only:[:index, :show, :edit, :update, :destroy] do
+      resources :reviews, only:[:create]
+  end
   # VERB PATH, to: "CONTROLLER#ACTION", as: "PREFIX"
   get "search", to: "cars#search", as: "search"
   # get "reviews/:id", to: "reviews#show"

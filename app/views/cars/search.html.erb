@@ -8,7 +8,8 @@
       <div class="card-search-infos">
         <h2> <%= car.brand %> - <%= car.model %></h2>
         <p><strong>Category: </strong><%= car.category %></p>
-        <p><strong>Description </strong><%= car.description %></p>
+        <p><strong>Description </strong><%= truncate(car.description, length: 100,separator: ' ') %></p>
+        <p><strong>Location: </strong><%= car.location %></p>
       </div>
     </div>
     <% end %>
@@ -23,7 +24,6 @@
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
 
   </div>
-
 
 </div>
 
