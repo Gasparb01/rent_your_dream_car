@@ -1,25 +1,27 @@
-<div class=" add-car">
-<div class="container my-8 mx-auto">
-  <div class="row justify-space-between">
-      <h1 class="mx-auto my-5"><strong>Rent your car and start to earn money</strong></h1>
-    <div class="card-card-new my-3">
-      <%= simple_form_for @car do |f| %>
-      <div class="justify-content-felx">
-      <%= f.input :model, label: false, placeholder:"BMW" %>
-      </div>
-      <%= f.input :brand, label: false, placeholder:"X3" %>
-      <%= f.input :year,label: false, placeholder:"2016" %>
-      <%= f.input :category, collection: Car::CATEGORIES,label: false, placeholder:"Category" %>
-      <%= f.input :description, label: false, placeholder:"The BMW X3 is a compact luxury crossover SUV manufactured by German automaker BMW since 2003."  %>
-      <%= f.input :location, label: false, placeholder:"Madrid" %>
-      <%= f.input :price, label: false, placeholder:"$250" %>
-      <%= f.input :photo, label: false  %>
-      <%= f.input :photo_cache, as: :hidden %>
-  <div class="container mx-auto my-3">
-      <%= f.submit  "Add a car", class: "btn btn-danger" %>
+<div class="banner-2" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1434187008486-2768576189ee?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80)">
+  <div class="container">
+    <h1>Add your car</h1>
+    <h2>Rent your car and start to earn money</h2>
   </div>
 </div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <%= simple_form_for @car do |f| %>
+        <%= f.input :model, label: false, placeholder:"BMW" %>
+        <%= f.input :brand, label: false, placeholder:"X3" %>
+        <%= f.input :year,label: false, placeholder:"2016" %>
+        <%= f.input :category, collection: Car::CATEGORIES,label: false, placeholder:"Category" %>
+        <%= f.input :description, label: false, placeholder:"The BMW X3 is a compact luxury crossover SUV manufactured by German automaker BMW since 2003."  %>
+        <%= f.input :location, label: false, placeholder:"Madrid" %>
+        <%= f.input :price, label: false, placeholder:"$250" %>
+        <%= f.input :photo, label: false  %>
+        <%= f.input :photo_cache, as: :hidden %>
+        <div class="container mx-auto my-3">
+          <%= f.submit  "Add a car", class: "btn btn-danger" %>
+        </div>
       <% end %>
     </div>
   </div>
+
 </div>
