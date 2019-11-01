@@ -20,13 +20,15 @@
 
       <div class="reviews">
         <% @car.reviews.each do |review| %>
-        <div class="card my-3">
+        <div class="card-review my-3 border-botton">
           <div class="card-body">
             <div class="row">
-              <div class="col-sm-12 col-lg-3">
+              <div class="col-sm-12 col-lg-3 d-flex align-items-center">
                 <img src="https://www.classifapp.com/wp-content/uploads/2017/09/avatar-placeholder.png" class="img-rounded">
-                <span class="review-block-name"><a><strong><%= review.user.email %></strong></a></span>
-                <span class="review-block-date"><%= review.created_at.strftime("%B %Y") %></span>
+                <div style="padding-left: 10px">
+                <span class="review-block-name"><a><strong><%= /(?<user>.*)@/.match(review.user.email)[:user] %></strong></a></span>
+                <p class="review-block-date" style="margin-bottom:0; font-size: 13px"><%= review.created_at.strftime("%B %Y") %></p>
+                </div>
               </div>
               <div class="col-sm-12">
                 <div class="review-block-title"></div>

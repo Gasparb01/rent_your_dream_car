@@ -11,13 +11,17 @@
           <p class="lead mb-0 text-dark"></p>
           <%= simple_form_for :search, url: search_path, method: :get do |f| %>
           <div class="search-form-control form-group w-50 mx-auto">
-            <select class="form-control select required text-white" name="search[query]" id="search_query">
+            <select class="form-control seleccano Gastón Lascano
+Recently edited these files
+Everyone else
+￼
+agusgrt required text-white" name="search[query]" id="search_query">
               <% Car::CATEGORIES.each do |category| %>
               <option value="<%= category %>"><%= category %></option>
               <% end %>
             </select>
           </div>
-          <button name="button" type="submit" class="btn btn-primary btn-block btn-lg text-white w-50 mx-auto">
+          <button name="button" type="submit" class="btn btn-danger btn-block btn-lg text-white w-50 mx-auto">
           Search cars! <i class="fas fa-search text-white"></i></button>
           <% end %>
         </div>
