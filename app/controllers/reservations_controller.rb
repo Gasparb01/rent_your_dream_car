@@ -26,7 +26,9 @@ class ReservationsController < ApplicationController
     @review = Review.new
     @markers = [{
       lat: @reservation.car.latitude,
-      lng: @reservation.car.longitude
+      lng: @reservation.car.longitude,
+      # infoWindow: render_to_string(partial: "info_window", locals: { car: car })
+
     }]
     authorize @reservation
   end
