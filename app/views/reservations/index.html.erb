@@ -1,0 +1,30 @@
+<div class="card-product-infos ">
+  <h2>Reservations</h2>
+  <p><strong>Edit your reservations</strong></p>
+</div>
+<div class="cards-search mt-2">
+  <% @reservations.each do |reservation| %>
+  <%= link_to reservation_path(reservation), class:"card-search-wrapper" do %>
+  <div class="card-search my-2 mx-3">
+    <%= cl_image_tag(reservation.car.photo, width: 500, height: 600, crop: :fill) %>
+    <div class="card-search-infos">
+      <h2> <%= reservation.car.brand %> <%= reservation.car.model %></h2>
+      <p><strong>Date Reservation: </strong><%= reservation.starting_date %></p>
+      <p><strong>Days: </strong><%= reservation. %></p>
+      <p><strong>Location: </strong><%= reservation.car.location %></p>
+      <p><strong>Price: </strong><%= reservation.price %></p>
+    </div>
+  </div>
+  <% end %>
+  <% end %>
+  <div
+  id="map"
+  style="width: 550px;
+  height: 600px;"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>
+
+</div>
+</div>
+
