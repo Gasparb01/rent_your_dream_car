@@ -2,8 +2,10 @@ require "faker"
 
 puts "Destroy all old seeds"
 
-User.destroy_all
+Review.destroy_all
+Reservation.destroy_all
 Car.destroy_all
+User.destroy_all
 
 puts "Starting seeding process"
 

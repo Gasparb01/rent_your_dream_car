@@ -24,6 +24,10 @@ class ReservationsController < ApplicationController
 
   def show
     @review = Review.new
+    @markers = [{
+      lat: @reservation.car.latitude,
+      lng: @reservation.car.longitude
+    }]
     authorize @reservation
   end
 

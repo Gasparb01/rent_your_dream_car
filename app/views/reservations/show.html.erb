@@ -36,9 +36,13 @@
             </div>
           </li>
         </ul>
-        <div class="card-body">
-          <a href="#" class="card-link">Card link</a>
-          <a href="#" class="card-link">Another link</a>
+        <div class="card-body d-flex justify-content-between">
+          <div>
+            <a href="<%= reservations_path %> " class="card-link">My reservations</a>
+          </div>
+          <div>
+            <a href="<%= car_path %> " class="card-link">My car</a>
+          </div>
         </div>
       </div>
     </div>
@@ -54,8 +58,5 @@
  </div>
 </div>
 </div>
-
-<h1>Reservations#show</h1>
-<p>Find me in app/views/reservations/show.html.erb</p>
 
 <%= render 'reservations/review_form' %>
