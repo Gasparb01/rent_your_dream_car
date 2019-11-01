@@ -20,20 +20,30 @@ class ReservationsController < ApplicationController
 
   def index
     @reservations = policy_scope(Reservation)
+    @markers = @reservations.map do |reservation|
+      {
+        lat: reservation.car.latitude,
+        lng: reservation.car.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { reservation: reservation }),
+        image_url: helpers.asset_url(reservation.car.photo)
+      }
+    end
   end
 
   def show
     @review = Review.new
     @markers = [{
       lat: @reservation.car.latitude,
-      lng: @reservation.car.longitude
+      lng: @reservation.car.longitude,
+      infoWindow: render_to_string(partial: "info_window", locals: { reservation: @reservation })
     }]
     authorize @reservation
   end
 
   def destroy
     @reservation.destroy
-    redirect_to cars_path
+    redirect_to reservations_path
+    authorize @reservation
   end
 
   def edit
