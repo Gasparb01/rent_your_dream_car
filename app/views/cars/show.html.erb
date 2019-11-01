@@ -19,7 +19,7 @@
       <p><%= @car.description %></p>
 
       <div class="reviews">
-        <% @car.reviews.each do |review| %>
+        <% @car.reviews.order(updated_at: :desc).each do |review| %>
         <div class="card my-3">
           <div class="card-body">
             <div class="row">
